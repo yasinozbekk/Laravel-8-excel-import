@@ -14,9 +14,5 @@ use App\Http\Controllers\ExcelController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('excel/form', [ExcelController::class, 'showForm'])->name('excel.form');
+Route::get('/', [ExcelController::class, 'showForm'])->name('excel.form');
 Route::post('excel/read', [ExcelController::class, 'readExcel'])->name('excel.read');
